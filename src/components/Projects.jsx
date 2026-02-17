@@ -14,7 +14,8 @@ const Projects = () => {
         description:
           "A Netflix-inspired front-end web application built to practice modern UI development. The project focuses on creating a visually appealing streaming platform interface with smooth layout, responsive design, and dynamic content sections.",
         tech: ["React", "Node.js", "Firebase", "TMDB API"],
-        githubLink: "https://github.com/Shanvi30/Netflix-Clone-Frontend-Web-Project.git",
+        githubLink:
+          "https://github.com/Shanvi30/Netflix-Clone-Frontend-Web-Project.git",
         liveLink: "https://netflix-clone-frontend-web-project.vercel.app/login",
       },
       {
@@ -74,8 +75,7 @@ const Projects = () => {
       {
         id: 8,
         title: "BMI Calculator",
-        description:
-          "A webpage to calculate your body mass index.",
+        description: "A webpage to calculate your body mass index.",
         tech: ["HTML", "CSS", "JavaScript"],
         githubLink: "https://github.com/Shanvi30/BMI-Calculator.git",
         liveLink: "https://bmi-calculator-three-blue.vercel.app/",
@@ -83,8 +83,7 @@ const Projects = () => {
       {
         id: 9,
         title: "Color Switcher",
-        description:
-          "A playground to change the color of the background.",
+        description: "A playground to change the color of the background.",
         tech: ["HTML", "CSS", "JavaScript"],
         githubLink: "https://github.com/Shanvi30/Color-Switcher.git",
         liveLink: "https://color-switcher-three-ochre.vercel.app/",

@@ -88,10 +88,8 @@ const Navbar = () => {
         className={[
           "transition-all duration-300",
           scrolled
-            ? "bg-[#fafafa]/80 dark:bg-[#0f0f14]/80 backdrop-blur-lg border-b border-[#e4e6eb]/50 dark:border-[#2e2e38]/50"
-            : "bg-[#fafafa]/90 dark:bg-[#0f0f14]/95 backdrop-blur-md border-b border-[#e4e6eb]/80 dark:border-[#2e2e38]",
-          scrolled ? "rounded-none" : "md:rounded-full",
-          "max-w-5xl mx-auto",
+            ? "bg-[#fafafa]/80 dark:bg-[#0f0f14]/80 backdrop-blur-lg border-b border-[#e4e6eb]/50 dark:border-[#2e2e38] w-full"
+            : "bg-[#fafafa]/90 dark:bg-[#0f0f14]/95 backdrop-blur-md border border-[#e4e6eb]/80 dark:border-[#2e2e38] max-w-5xl mx-auto md:rounded-full",
         ].join(" ")}
       >
         <div className="px-4 md:px-6">

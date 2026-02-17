@@ -57,14 +57,38 @@ const Hero = () => {
   }, []);
 
   const handleContactClick = () => {
-    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+    const contactSection = document.getElementById("contact");
+
+    if (contactSection) {
+      const navbar = document.querySelector("nav");
+      const navbarHeight = navbar ? navbar.offsetHeight : 0;
+
+      const elementPosition =
+        contactSection.getBoundingClientRect().top + window.pageYOffset;
+
+      const offsetPosition = elementPosition - navbarHeight + 8;
+      // 16px = top-4 spacing
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
   };
 
   const handleViewWorkClick = () => {
     const projectsSection = document.getElementById("projects");
+
     if (projectsSection) {
-      const elementPosition = projectsSection.getBoundingClientRect().top;
-      projectsSection.scrollIntoView({ behavior: "smooth" });
+      const navbar = document.querySelector("nav");
+      const navbarHeight = navbar ? navbar.offsetHeight : 0;
+
+      const elementPosition =
+        projectsSection.getBoundingClientRect().top + window.pageYOffset;
+
+      const offsetPosition = elementPosition - navbarHeight - 16;
+      // 16px = top-4 spacing
+
       window.scrollTo({
         top: offsetPosition,
         behavior: "smooth",

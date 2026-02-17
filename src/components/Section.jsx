@@ -17,7 +17,7 @@ const Section = ({ id, className = "", children }) => {
           ? "px-6 py-16 md:px-8 md:py-20"
           : "px-6 pt-20 pb-16 md:px-8 md:pt-24 md:pb-20",
 
-        "bg-[#f3f4f8] dark:bg-[#1a1a22]",
+        id !== "home" && "bg-[#f3f4f8] dark:bg-[#1a1a22]",
         "transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]",
         inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10",
         className,
