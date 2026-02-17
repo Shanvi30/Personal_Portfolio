@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+  }
+
+  body {
+    background-color: #fafafa;
+    color: #1c1c1e;
+    @apply dark:bg-[#0f0f14] dark:text-[#f5f5f7];
+    @apply transition-colors duration-300 antialiased;
+    min-height: 100vh;
+  }
+
+  #root {
+    min-height: 100vh;
+    background-color: #fafafa;
+    @apply dark:bg-[#0f0f14];
+    @apply transition-colors duration-300;
+  }
+}
+
+@layer utilities {
+  .card-surface {
+    background-color: #ffffff;
+    border-color: #e4e6eb;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    @apply transition-all duration-300;
+  }
+
+  .dark .card-surface {
+    background-color: #23232d;
+    border-color: #2e2e38;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  }
+
+  .card-surface:hover {
+    background-color: #ffffff;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+  }
+
+  .dark .card-surface:hover {
+    background-color: #2a2a35;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5);
+  }
+
+  .gradient-accent {
+    @apply bg-gradient-to-r from-[#f58529] via-[#dd2a7b] to-[#8134af];
+  }
+
+  .dark .gradient-accent {
+    @apply bg-gradient-to-r from-[#f58529] via-[#c13584] to-[#5851db];
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out;
+}
+
+.animate-fade-in-delay {
+  animation: fade-in 1s ease-out 0.2s both;
+}
+
+.animate-fade-in-delay-2 {
+  animation: fade-in 1.2s ease-out 0.4s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
