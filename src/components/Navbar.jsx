@@ -72,7 +72,7 @@ const Navbar = () => {
       const elementTop = element.getBoundingClientRect().top + window.scrollY;
 
       window.scrollTo({
-        top: elementTop - navbarHeight + 10,
+        top: elementTop - navbarHeight,
         behavior: "smooth",
       });
     }, 250);
