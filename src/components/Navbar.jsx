@@ -67,15 +67,16 @@ const Navbar = () => {
 
     setTimeout(() => {
       const navbar = document.querySelector("nav");
-      const navbarHeight = navbar?.offsetHeight || 0;
+
+      const navbarHeight = navbar.getBoundingClientRect().height;
 
       const elementTop = element.getBoundingClientRect().top + window.scrollY;
 
       window.scrollTo({
-        top: elementTop - navbarHeight + 5,
+        top: elementTop - navbarHeight,
         behavior: "smooth",
       });
-    }, 250);
+    }, 300);
   };
 
   return (
