@@ -188,7 +188,7 @@ const Navbar = () => {
                   className={[
                     "block py-2 px-1 font-medium",
                     "text-[#5f6368] hover:text-[#1c1c1e] dark:text-[#a1a1aa] dark:hover:text-[#f5f5f7]",
-                    "transition-colors duration-300",
+                    "transition-colors duration-100",
                     activeId === link.id
                       ? "text-[#1c1c1e] dark:text-[#f5f5f7]"
                       : "",
