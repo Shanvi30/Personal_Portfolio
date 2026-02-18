@@ -45,7 +45,7 @@ const About = () => {
             </div>
 
             {/* Right: Image */}
-            <div className="flex justify-center md:justify-center">
+            <div className="hidden md:flex justify-center">
               <div className="relative">
                 <div className="h-60 w-60 md:h-72 md:w-72 rounded-xl bg-white dark:bg-[#23232d] border-2 border-[#e4e6eb] dark:border-[#2e2e38] overflow-hidden transition-all duration-300">
                   <img

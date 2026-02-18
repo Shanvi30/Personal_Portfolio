@@ -63,10 +63,8 @@ const Navbar = () => {
     const element = document.querySelector(href);
     if (!element) return;
 
-    // First close mobile menu
     setIsOpen(false);
 
-    // Wait for navbar to shrink (important for mobile)
     setTimeout(() => {
       const navbar = document.querySelector("nav");
       const navbarHeight = navbar?.offsetHeight || 0;
@@ -178,8 +176,14 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Navigation */}
-          {isOpen && (
-            <div className="md:hidden pb-4 pt-2 space-y-1">
+          <div
+  className={`
+    md:hidden overflow-hidden
+    transition-all duration-500 ease-in-out
+    ${isOpen ? "max-h-96 opacity-100 translate-y-0 pb-4 pt-2" : "max-h-0 opacity-0 -translate-y-4"}
+  `}
+>
+
               {navLinks.map((link) => (
                 <a
                   key={link.name}
@@ -198,7 +202,6 @@ const Navbar = () => {
                 </a>
               ))}
             </div>
-          )}
         </div>
       </div>
     </nav>
