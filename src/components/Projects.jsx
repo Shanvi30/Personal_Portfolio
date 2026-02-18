@@ -1,10 +1,12 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import Section from "./Section";
 import ProjectCard from "./ProjectCard";
+import { FaGithub, FaExternalLinkAlt, FaTimes } from "react-icons/fa";
 
 const Projects = () => {
   const [showAll, setShowAll] = useState(false);
-  const [expandedId, setExpandedId] = useState(null);
+  const [expandedProject, setExpandedProject] = useState(null);
 
   const projects = useMemo(
     () => [
@@ -67,7 +69,7 @@ const Projects = () => {
         id: 7,
         title: "Number Guessing Game",
         description:
-          "A fun JavaScript guessing game where the player tries to guess a randomly generated number within a limited number of attempts. Built using HTML, CSS, and vanilla JavaScript.",
+          "A fun JavaScript guessing game where the player tries to guess a randomly generated number within a limited number of attempts.",
         tech: ["HTML", "CSS", "JavaScript"],
         githubLink: "https://github.com/Shanvi30/Number-Guessing-Game.git",
         liveLink: "https://number-guessing-game-six-lovat.vercel.app/",
@@ -92,7 +94,7 @@ const Projects = () => {
         id: 10,
         title: "Auth Form Design",
         description:
-          "A beautiful glassmorphic Login and Register UI featuring animations, gradient backgrounds, and clean responsive design. Built using HTML, CSS, and Vanilla JavaScript.",
+          "A beautiful glassmorphic Login and Register UI featuring animations, gradient backgrounds, and clean responsive design.",
         tech: ["HTML", "CSS", "JavaScript"],
         githubLink: "https://github.com/Shanvi30/auth-form-design.git",
         liveLink: "https://auth-form-design.vercel.app/",
@@ -101,44 +103,119 @@ const Projects = () => {
     [],
   );
 
-  const visible = showAll ? projects : projects.slice(0, 4);
+  const visibleProjects = showAll ? projects : projects.slice(0, 4);
+
+  useEffect(() => {
+    if (expandedProject) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => (document.body.style.overflow = "auto");
+  }, [expandedProject]);
+
+  const openModal = (project) => {
+    setExpandedProject(project);
+  };
+
+  const closeModal = () => {
+    setExpandedProject(null);
+  };
 
   return (
-    <Section id="projects">
-      <div className="w-full">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#1c1c1e] dark:text-[#f5f5f7] transition-all duration-300 pb-4 relative inline-block group cursor-default">
-            PROJECTS
-            <span className="absolute bottom-0 left-0 h-0.5 w-full bg-gradient-to-r from-[#f58529] via-[#dd2a7b] to-[#8134af] dark:from-[#f58529] dark:via-[#c13584] dark:to-[#5851db] transition-all duration-300 group-hover:scale-x-110 group-hover:opacity-80"></span>
-          </h2>
-        </div>
+    <>
+      <Section id="projects">
+        <div className="w-full">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#1c1c1e] dark:text-[#f5f5f7] transition-all duration-300 pb-4 relative inline-block group cursor-default">
+              PROJECTS
+              <span className="absolute bottom-0 left-0 h-0.5 w-full bg-gradient-to-r from-[#f58529] via-[#dd2a7b] to-[#8134af] dark:from-[#f58529] dark:via-[#c13584] dark:to-[#5851db] transition-all duration-300 group-hover:scale-x-110 group-hover:opacity-80"></span>
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6">
+            {visibleProjects.map((project) => (
+              <ProjectCard
+                key={project.id}
+                project={project}
+                onClick={() => openModal(project)}
+              />
+            ))}
+          </div>
 
-        <div className="grid md:grid-cols-2 gap-6 transition-all duration-500">
-          {visible.map((project) => (
-            <ProjectCard
-              key={project.id}
-              project={project}
-              isExpanded={expandedId === project.id}
-              onToggle={() =>
-                setExpandedId((current) =>
-                  current === project.id ? null : project.id,
-                )
-              }
-            />
-          ))}
+          <div className="flex justify-center mt-12">
+            <button
+              onClick={() => setShowAll((prev) => !prev)}
+              className="px-8 py-3 rounded-lg bg-gradient-to-r from-[#f58529] via-[#dd2a7b] to-[#8134af] text-white font-medium hover:opacity-90 transition"
+            >
+              {showAll ? "See Less" : "See More"}
+            </button>
+          </div>
         </div>
+      </Section>
 
-        <div className="flex justify-center mt-12">
-          <button
-            type="button"
-            onClick={() => setShowAll((v) => !v)}
-            className="px-8 py-3 rounded-lg bg-gradient-to-r from-[#f58529] via-[#dd2a7b] to-[#8134af] dark:from-[#f58529] dark:via-[#c13584] dark:to-[#5851db] text-white font-medium hover:opacity-90 transition-all duration-300 shadow-lg"
+      {expandedProject &&
+        createPortal(
+          <div
+            onClick={closeModal}
+            className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4 animate-fadeIn"
           >
-            {showAll ? "See Less" : "See More"}
-          </button>
-        </div>
-      </div>
-    </Section>
+            <div
+              onClick={(e) => e.stopPropagation()}
+              className="relative w-full max-w-3xl max-h-[85vh] overflow-y-auto bg-white dark:bg-[#1f1f27] rounded-2xl shadow-2xl p-6 md:p-8 transform transition-all duration-300 scale-100"
+            >
+              <button
+                onClick={closeModal}
+                className="absolute top-4 right-4 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white"
+              >
+                <FaTimes size={22} />
+              </button>
+
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+                {expandedProject.title}
+              </h2>
+
+              <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                {expandedProject.description}
+              </p>
+
+              <div className="flex flex-wrap gap-3 mb-8">
+                {expandedProject.tech.map((item, index) => (
+                  <span
+                    key={index}
+                    className="px-4 py-1 text-sm rounded-full bg-gray-100 dark:bg-[#2a2a35] text-gray-700 dark:text-gray-300"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a
+                  href={expandedProject.githubLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gray-200 dark:bg-[#2a2a35] hover:bg-gradient-to-r from-[#f58529] via-[#dd2a7b] to-[#8134af] dark:hover:bg-[#32323d] transition font-medium"
+                >
+                  <FaGithub />
+                  View Code
+                </a>
+
+                <a
+                  href={expandedProject.liveLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#f58529] via-[#dd2a7b] to-[#8134af] text-white font-medium hover:opacity-90 transition"
+                >
+                  <FaExternalLinkAlt />
+                  View Live
+                </a>
+              </div>
+            </div>
+          </div>,
+          document.body,
+        )}
+    </>
   );
 };
 
