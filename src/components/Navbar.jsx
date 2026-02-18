@@ -178,28 +178,27 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Navigation */}
-          <div
-            className={`md:hidden pb-4 pt-2 space-y-1 transition-all duration-300 overflow-hidden
-            ${isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"}`}
-          >
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
-                className={[
-                  "block py-2 px-1 font-medium",
-                  "text-[#5f6368] hover:text-[#1c1c1e] dark:text-[#a1a1aa] dark:hover:text-[#f5f5f7]",
-                  "transition-colors duration-300",
-                  activeId === link.id
-                    ? "text-[#1c1c1e] dark:text-[#f5f5f7]"
-                    : "",
-                ].join(" ")}
-              >
-                {link.name}
-              </a>
-            ))}
-          </div>
+          {isOpen && (
+            <div className="md:hidden pb-4 pt-2 space-y-1">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
+                  className={[
+                    "block py-2 px-1 font-medium",
+                    "text-[#5f6368] hover:text-[#1c1c1e] dark:text-[#a1a1aa] dark:hover:text-[#f5f5f7]",
+                    "transition-colors duration-300",
+                    activeId === link.id
+                      ? "text-[#1c1c1e] dark:text-[#f5f5f7]"
+                      : "",
+                  ].join(" ")}
+                >
+                  {link.name}
+                </a>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </nav>
