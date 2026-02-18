@@ -177,7 +177,7 @@ const Contact = () => {
                       ? "border-[#dd2a7b] dark:border-[#c13584] focus:ring-[#dd2a7b]/30 dark:focus:ring-[#c13584]/30"
                       : ""
                   }`}
-                  placeholder="your.email@example.com"
+                  placeholder="name@gmail.com"
                 />
                 {errors.email && (
                   <p className="text-[#dd2a7b] dark:text-[#c13584] text-sm mt-1">
@@ -204,7 +204,7 @@ const Contact = () => {
                       ? "border-[#dd2a7b] dark:border-[#c13584] focus:ring-[#dd2a7b]/30 dark:focus:ring-[#c13584]/30"
                       : ""
                   }`}
-                  placeholder="Your message here..."
+                  placeholder="Type message here..."
                 />
                 {errors.message && (
                   <p className="text-[#dd2a7b] dark:text-[#c13584] text-sm mt-1">
