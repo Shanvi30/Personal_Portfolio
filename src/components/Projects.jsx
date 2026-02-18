@@ -29,7 +29,7 @@ const Projects = () => {
         tech: ["React", "CSS", "JavaScript"],
         githubLink: "https://github.com/Shanvi30/Fashion-Store.git",
         liveLink: "https://fashion-store-gules-rho.vercel.app/",
-        image: "Fashion-Store.png"
+        image: "Fashion-Store.png",
       },
       {
         id: 3,

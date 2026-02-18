@@ -5,7 +5,7 @@ const ProjectCard = ({ project = {}, onClick }) => {
     title = "Project Title",
     description = "Project description goes here...",
     tech = [],
-    image = "https://images.unsplash.com/photo-1492724441997-5dc865305da7?q=80&w=1200&auto=format&fit=crop",
+    image = "",
   } = project;
 
   return (

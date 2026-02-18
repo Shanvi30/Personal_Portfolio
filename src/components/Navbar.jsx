@@ -61,19 +61,23 @@ const Navbar = () => {
     e.preventDefault();
 
     const element = document.querySelector(href);
-    const navbar = document.querySelector("nav");
+    if (!element) return;
 
-    if (element && navbar) {
-      const navbarHeight = navbar.offsetHeight;
+    // First close mobile menu
+    setIsOpen(false);
+
+    // Wait for navbar to shrink (important for mobile)
+    setTimeout(() => {
+      const navbar = document.querySelector("nav");
+      const navbarHeight = navbar?.offsetHeight || 0;
+
       const elementTop = element.getBoundingClientRect().top + window.scrollY;
 
       window.scrollTo({
         top: elementTop - navbarHeight + 2,
         behavior: "smooth",
       });
-    }
-
-    setIsOpen(false);
+    }, 100); // small delay for layout update
   };
 
   return (
@@ -88,8 +92,13 @@ const Navbar = () => {
         className={[
           "transition-all duration-300",
           scrolled
-            ? "bg-[#fafafa]/80 dark:bg-[#0f0f14]/80 backdrop-blur-lg border-b border-[#e4e6eb]/50 dark:border-[#2e2e38] w-full"
-            : "bg-[#fafafa]/90 dark:bg-[#0f0f14]/95 backdrop-blur-md border border-[#e4e6eb]/80 dark:border-[#2e2e38] max-w-5xl mx-auto md:rounded-full",
+            ? `bg-[#fafafa]/90 dark:bg-[#0f0f14]/90 backdrop-blur-lg 
+     border border-[#e4e6eb]/50 dark:border-[#2e2e38] 
+     mx-3 ${isOpen ? "rounded-3xl" : "rounded-full"}`
+            : `bg-[#fafafa]/90 dark:bg-[#0f0f14]/95 backdrop-blur-md 
+     border border-[#e4e6eb]/80 dark:border-[#2e2e38] 
+     mx-3 max-w-5xl md:mx-auto 
+     ${isOpen ? "rounded-3xl" : "rounded-full"}`,
         ].join(" ")}
       >
         <div className="px-4 md:px-6">
