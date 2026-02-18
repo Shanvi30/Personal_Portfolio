@@ -72,10 +72,10 @@ const Navbar = () => {
       const elementTop = element.getBoundingClientRect().top + window.scrollY;
 
       window.scrollTo({
-        top: elementTop - navbarHeight + 2,
+        top: elementTop - navbarHeight + 10,
         behavior: "smooth",
       });
-    }, 100); // small delay for layout update
+    }, 250);
   };
 
   return (
@@ -177,31 +177,28 @@ const Navbar = () => {
 
           {/* Mobile Navigation */}
           <div
-  className={`
-    md:hidden overflow-hidden
-    transition-all duration-500 ease-in-out
-    ${isOpen ? "max-h-96 opacity-100 translate-y-0 pb-4 pt-2" : "max-h-0 opacity-0 -translate-y-4"}
-  `}
->
-
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={(e) => handleNavClick(e, link.href)}
-                  className={[
-                    "block py-2 px-1 font-medium",
-                    "text-[#5f6368] hover:text-[#1c1c1e] dark:text-[#a1a1aa] dark:hover:text-[#f5f5f7]",
-                    "transition-colors duration-300",
-                    activeId === link.id
-                      ? "text-[#1c1c1e] dark:text-[#f5f5f7]"
-                      : "",
-                  ].join(" ")}
-                >
-                  {link.name}
-                </a>
-              ))}
-            </div>
+            className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out
+            ${isOpen ? "max-h-96 opacity-100 translate-y-0 pb-4 pt-2" : "max-h-0 opacity-0 -translate-y-4"}
+            `}
+          >
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
+                className={[
+                  "block py-2 px-1 font-medium",
+                  "text-[#5f6368] hover:text-[#1c1c1e] dark:text-[#a1a1aa] dark:hover:text-[#f5f5f7]",
+                  "transition-colors duration-300",
+                  activeId === link.id
+                    ? "text-[#1c1c1e] dark:text-[#f5f5f7]"
+                    : "",
+                ].join(" ")}
+              >
+                {link.name}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </nav>
