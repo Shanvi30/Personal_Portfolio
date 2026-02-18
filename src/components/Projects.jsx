@@ -18,7 +18,8 @@ const Projects = () => {
         tech: ["React", "Node.js", "Firebase", "TMDB API"],
         githubLink:
           "https://github.com/Shanvi30/Netflix-Clone-Frontend-Web-Project.git",
-        liveLink: "https://netflix-clone-frontend-web-project.vercel.app/login",
+        liveLink: "https://netflix-clone-frontend-web-project.vercel.app/",
+        image: "Netflix.png",
       },
       {
         id: 2,
@@ -28,6 +29,7 @@ const Projects = () => {
         tech: ["React", "CSS", "JavaScript"],
         githubLink: "https://github.com/Shanvi30/Fashion-Store.git",
         liveLink: "https://fashion-store-gules-rho.vercel.app/",
+        image: "Fashion-Store.png"
       },
       {
         id: 3,
@@ -37,6 +39,7 @@ const Projects = () => {
         tech: ["React", "Tailwind CSS"],
         githubLink: "https://github.com/Shanvi30/Light-Dark-Theme-Toggle.git",
         liveLink: "https://example.com",
+        image: "Toggle.png",
       },
       {
         id: 4,
@@ -46,6 +49,7 @@ const Projects = () => {
         tech: ["React", "Tailwind CSS", "Vite"],
         githubLink: "https://github.com/Shanvi30/React-Router.git",
         liveLink: "https://react-router-opal-two.vercel.app/",
+        image: "React_router.png",
       },
       {
         id: 5,
@@ -55,15 +59,17 @@ const Projects = () => {
         tech: ["React", "Tailwind CSS"],
         githubLink: "https://github.com/Shanvi30/Currency-Converter-App.git",
         liveLink: "https://currency-converter-app-lyart-eta.vercel.app/",
+        image: "Currency.png",
       },
       {
         id: 6,
-        title: "URL Shortener",
+        title: "Password Generator",
         description:
-          "Shortens long URLs with validation and a minimal dashboard to manage links.",
-        tech: ["React", "Node.js", "Express"],
-        githubLink: "https://github.com",
-        liveLink: "https://example.com",
+          "A clean and responsive Password Generator built using React Hooks and Tailwind CSS. Users can customize password length and choose character types to generate secure passwords instantly.",
+        tech: ["React", "Tailwind CSS"],
+        githubLink: "https://github.com/Shanvi30/Password_Generator.git",
+        liveLink: "https://password-generator-khaki-phi.vercel.app/",
+        image: "Password.png",
       },
       {
         id: 7,
@@ -73,6 +79,7 @@ const Projects = () => {
         tech: ["HTML", "CSS", "JavaScript"],
         githubLink: "https://github.com/Shanvi30/Number-Guessing-Game.git",
         liveLink: "https://number-guessing-game-six-lovat.vercel.app/",
+        image: "Guessing-Game.png",
       },
       {
         id: 8,
@@ -81,6 +88,7 @@ const Projects = () => {
         tech: ["HTML", "CSS", "JavaScript"],
         githubLink: "https://github.com/Shanvi30/BMI-Calculator.git",
         liveLink: "https://bmi-calculator-three-blue.vercel.app/",
+        image: "BMI-Calculator.png",
       },
       {
         id: 9,
@@ -89,6 +97,7 @@ const Projects = () => {
         tech: ["HTML", "CSS", "JavaScript"],
         githubLink: "https://github.com/Shanvi30/Color-Switcher.git",
         liveLink: "https://color-switcher-three-ochre.vercel.app/",
+        image: "Color-Switcher.png",
       },
       {
         id: 10,
@@ -98,6 +107,7 @@ const Projects = () => {
         tech: ["HTML", "CSS", "JavaScript"],
         githubLink: "https://github.com/Shanvi30/auth-form-design.git",
         liveLink: "https://auth-form-design.vercel.app/",
+        image: "Auth-Form.png",
       },
     ],
     [],
