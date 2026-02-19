@@ -203,7 +203,7 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="mt-12 flex justify-center">
+        <div className="hidden md:flex mt-12 justify-center">
           <a
             href="#about"
             onClick={(e) => {
