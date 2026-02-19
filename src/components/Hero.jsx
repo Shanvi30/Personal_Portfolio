@@ -101,7 +101,7 @@ const Hero = () => {
       <div className="w-full">
         <div className="grid md:grid-cols-2 gap-2 md:gap-1 items-center">
           {/* Left: Profile image */}
-          <div className="flex justify-center md:justify-center mt-6 md:mt-10">
+          <div className="flex justify-center mt-2 md:mt-10">
             <div className="relative">
               <div className="h-80 w-80 md:h-96 md:w-96 rounded-full bg-white dark:bg-[#23232d] shadow-xl dark:shadow-dark-soft flex items-center justify-center p-1 animate-float transition-transform duration-500 transform hover:scale-105 hover:shadow-2xl">
                 <div className="h-full w-full rounded-full bg-white dark:bg-[#1a1a22] border-2 border-[#e4e6eb] dark:border-[#2e2e38] overflow-hidden transition-transform duration-500 transform hover:rotate-3 hover:scale-105">
