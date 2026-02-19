@@ -153,11 +153,11 @@ const Skills = () => {
         </p>
 
         {/* Cards Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {skillCategories.map((category, index) => (
             <div
               key={index}
-              className="card-surface rounded-lg p-8 hover:-translate-y-1 transition-all duration-300"
+              className="card-surface rounded-lg p-5 md:p-8 hover:-translate-y-1 transition-all duration-300"
             >
               <h3 className="text-2xl font-semibold text-center text-[#1c1c1e] dark:text-[#f5f5f7] mb-8 transition-colors duration-300">
                 {category.title}

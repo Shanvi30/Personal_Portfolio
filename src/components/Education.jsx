@@ -24,16 +24,16 @@ const educationItems = [
 
 const Education = () => {
   return (
-    <Section id="education">
+    <Section id="education" className="pt-10">
       <div className="w-full">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#1c1c1e] dark:text-[#f5f5f7] transition-all duration-300 pb-4 relative inline-block group cursor-default">
+          <h2 className="text-2xl md:text-4xl font-bold text-[#1c1c1e] dark:text-[#f5f5f7] transition-all duration-300 pb-4 relative inline-block group cursor-default">
             EDUCATION
             <span className="absolute bottom-0 left-0 h-0.5 w-full bg-gradient-to-r from-[#f58529] via-[#dd2a7b] to-[#8134af] dark:from-[#f58529] dark:via-[#c13584] dark:to-[#5851db] transition-all duration-300 group-hover:scale-x-110 group-hover:opacity-80"></span>
           </h2>
         </div>
 
-        <div className="relative pl-6 md:pl-10">
+        <div className="relative pl-4 md:pl-10">
           {/* Vertical line */}
           <div className="absolute left-3 md:left-4 top-0 bottom-0 w-px bg-[#e4e6eb] dark:bg-[#2e2e38] transition-colors duration-300" />
 
