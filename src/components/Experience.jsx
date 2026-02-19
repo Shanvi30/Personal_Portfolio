@@ -8,7 +8,7 @@ const Experience = () => {
       <div className="w-full text-center">
         {/* Heading */}
         <div className="text-center mb-2">
-          <h2 className="text-4xl font-bold tracking-widest text-[#1c1c1e] dark:text-[#f5f5f7] transition-all duration-300 pb-4 relative inline-block group cursor-default">
+          <h2 className="text-2xl md:text-4xl font-bold tracking-widest text-[#1c1c1e] dark:text-[#f5f5f7] transition-all duration-300 pb-4 relative inline-block group cursor-default">
             EXPERIENCE
             <span className="absolute bottom-0 left-0 h-0.5 w-full bg-gradient-to-r from-[#f58529] via-[#dd2a7b] to-[#8134af] dark:from-[#f58529] dark:via-[#c13584] dark:to-[#5851db] transition-all duration-300 group-hover:scale-x-110 group-hover:opacity-80"></span>
           </h2>
