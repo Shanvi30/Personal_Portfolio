@@ -36,8 +36,7 @@ const Projects = () => {
         description:
           "A Netflix-inspired web application built to practice modern UI development. The project focuses on creating a visually appealing streaming platform interface with smooth layout, responsive design, and dynamic content sections.",
         tech: ["React", "Node.js", "Firebase", "TMDB API"],
-        githubLink:
-          "https://github.com/Shanvi30/Movie-Streaming-app.git",
+        githubLink: "https://github.com/Shanvi30/Movie-Streaming-app.git",
         liveLink: "https://trailer-streaming.netlify.app/",
         image: "Netflix.png",
       },
@@ -93,6 +92,26 @@ const Projects = () => {
       },
       {
         id: 9,
+        title: "To do App",
+        description:
+          "A simple Todo App built using HTML, CSS, and JavaScript with task management features and localStorage support for data persistence.",
+        tech: ["HTML", "CSS", "Javascript"],
+        githubLink: "https://github.com/Shanvi30/To-Do-App.git",
+        liveLink: "https://to-do-app-mu-wine.vercel.app/",
+        image: "To_do.png",
+      },
+      {
+        id: 10,
+        title: "Weather App",
+        description:
+          "Developed a responsive Weather Application using React.js and Material UI that fetches real-time weather data from a public API. Implemented dynamic UI updates, location-based search, and temperature details including humidity and wind speed with a clean, modern design.",
+        tech: ["React", "Material UI"],
+        githubLink: "https://github.com/Shanvi30/Weather-app.git",
+        liveLink: "https://weather-app-sigma-blush-82.vercel.app/",
+        image: "Weather.png",
+      },
+      {
+        id: 11,
         title: "Number Guessing Game",
         description:
           "A fun JavaScript guessing game where the player tries to guess a randomly generated number within a limited number of attempts.",
@@ -102,7 +121,7 @@ const Projects = () => {
         image: "Guessing-Game.png",
       },
       {
-        id: 10,
+        id: 12,
         title: "BMI Calculator",
         description: "A webpage to calculate your body mass index.",
         tech: ["HTML", "CSS", "JavaScript"],
@@ -111,7 +130,7 @@ const Projects = () => {
         image: "BMI-Calculator.png",
       },
       {
-        id: 11,
+        id: 13,
         title: "Color Switcher",
         description: "A playground to change the color of the background.",
         tech: ["HTML", "CSS", "JavaScript"],
@@ -120,7 +139,7 @@ const Projects = () => {
         image: "Color-Switcher.png",
       },
       {
-        id: 12,
+        id: 14,
         title: "Auth Form Design",
         description:
           "A beautiful glassmorphic Login and Register UI featuring animations, gradient backgrounds, and clean responsive design.",
