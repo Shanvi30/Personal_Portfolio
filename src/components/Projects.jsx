@@ -12,17 +12,37 @@ const Projects = () => {
     () => [
       {
         id: 1,
-        title: "Netflix Clone App",
+        title: "Vide Code Editor",
         description:
-          "A Netflix-inspired front-end web application built to practice modern UI development. The project focuses on creating a visually appealing streaming platform interface with smooth layout, responsive design, and dynamic content sections.",
-        tech: ["React", "Node.js", "Firebase", "TMDB API"],
-        githubLink:
-          "https://github.com/Shanvi30/Netflix-Clone-Frontend-Web-Project.git",
-        liveLink: "https://netflix-clone-frontend-web-project.vercel.app/",
-        image: "Netflix.png",
+          "A feature-rich online code editor built with React that supports HTML, CSS, and JavaScript with live preview. It offers a clean and intuitive interface for writing, testing, and previewing web code directly in the browser.",
+        tech: ["Next.js", "TypeScript", "Tailwind CSS", "MongoDB", "Prisma"],
+        githubLink: "https://github.com/Shanvi30/Vide-Code-Editor.git",
+        liveLink: "https://vide-code-editor-red.vercel.app/",
+        image: "Vide.png",
       },
       {
         id: 2,
+        title: "Thumblify – AI Thumbnail generator",
+        description:
+          "AI Thumbnail Generator is a full-stack web application that generates high-quality thumbnails using an AI image generation API. Users can enter a prompt and instantly receive AI-generated thumbnail images. The project uses React for the frontend and Node.js + Express for backend API handling.",
+        tech: ["React", "Tailwind CSS", "Node.js", "Express", "MongoDb Atlas"],
+        githubLink: "https://github.com/Shanvi30/AI-Thumbnail-generator.git",
+        liveLink: "https://ai-thumbnail-generator-one.vercel.app/",
+        image: "Thumblify.png",
+      },
+      {
+        id: 3,
+        title: "Movie Streaming App",
+        description:
+          "A Netflix-inspired web application built to practice modern UI development. The project focuses on creating a visually appealing streaming platform interface with smooth layout, responsive design, and dynamic content sections.",
+        tech: ["React", "Node.js", "Firebase", "TMDB API"],
+        githubLink:
+          "https://github.com/Shanvi30/Movie-Streaming-app.git",
+        liveLink: "https://trailer-streaming.netlify.app/",
+        image: "Netflix.png",
+      },
+      {
+        id: 4,
         title: "Fashion Store",
         description:
           "This project is a fully responsive frontend design converted from a Figma UI layout. The goal of the project is to transform a static design prototype into a pixel-perfect and functional webpage using React.",
@@ -32,7 +52,7 @@ const Projects = () => {
         image: "Fashion-Store.png",
       },
       {
-        id: 3,
+        id: 5,
         title: "Light Dark Theme Toggle",
         description:
           "This project demonstrates how to implement a smooth and responsive Light–Dark Theme Toggle in a React application using Context API and Tailwind CSS.",
@@ -42,7 +62,7 @@ const Projects = () => {
         image: "Toggle.png",
       },
       {
-        id: 4,
+        id: 6,
         title: "React Router",
         description:
           "A small project built while learning React Router. This project demonstrates how to set up routing in a React application and navigate between multiple pages smoothly.",
@@ -52,7 +72,7 @@ const Projects = () => {
         image: "React_router.png",
       },
       {
-        id: 5,
+        id: 7,
         title: "Currency Converter App",
         description:
           "A simple and elegant currency converter built using React.js. It allows users to convert money between different currencies in real-time using a live exchange-rate API.",
@@ -62,7 +82,7 @@ const Projects = () => {
         image: "Currency.png",
       },
       {
-        id: 6,
+        id: 8,
         title: "Password Generator",
         description:
           "A clean and responsive Password Generator built using React Hooks and Tailwind CSS. Users can customize password length and choose character types to generate secure passwords instantly.",
@@ -72,7 +92,7 @@ const Projects = () => {
         image: "Password.png",
       },
       {
-        id: 7,
+        id: 9,
         title: "Number Guessing Game",
         description:
           "A fun JavaScript guessing game where the player tries to guess a randomly generated number within a limited number of attempts.",
@@ -82,7 +102,7 @@ const Projects = () => {
         image: "Guessing-Game.png",
       },
       {
-        id: 8,
+        id: 10,
         title: "BMI Calculator",
         description: "A webpage to calculate your body mass index.",
         tech: ["HTML", "CSS", "JavaScript"],
@@ -91,7 +111,7 @@ const Projects = () => {
         image: "BMI-Calculator.png",
       },
       {
-        id: 9,
+        id: 11,
         title: "Color Switcher",
         description: "A playground to change the color of the background.",
         tech: ["HTML", "CSS", "JavaScript"],
@@ -100,7 +120,7 @@ const Projects = () => {
         image: "Color-Switcher.png",
       },
       {
-        id: 10,
+        id: 12,
         title: "Auth Form Design",
         description:
           "A beautiful glassmorphic Login and Register UI featuring animations, gradient backgrounds, and clean responsive design.",
